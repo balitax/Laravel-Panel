@@ -7,16 +7,12 @@
                 <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
             </div>
             <!--logo start-->
-            <a href="index.html" class="logo">MERAME<span>LABS</span></a>
+            <a href="index.html" class="logo"><span>LARA</span>V<span>LABS</span></a>
             <!--logo end-->
             
             <div class="top-nav ">
                 <!--search & user info start-->
                 <ul class="nav pull-right top-menu">
-                    <li>
-                        <input type="text" class="form-control search" placeholder="Search">
-                    </li>
-                    <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <img alt="" src="{{asset('admin/img/avatar1_small.jpg')}}">
