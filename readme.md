@@ -9,4 +9,4 @@ Require Dev Tambahan
 	- way/generators
 	
 	
-CopyLeft <a href="http://facevook.com/meramestudio">Agus Cahyono</a>
+CopyLeft <a href="http://facebook.com/meramestudio">Agus Cahyono</a>
