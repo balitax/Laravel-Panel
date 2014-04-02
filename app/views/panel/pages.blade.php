@@ -1,5 +1,10 @@
 @extends('panel/layout')
   @section('content')
+
+{{HTML::style('admin/assets/advanced-datatable/media/css/demo_page.css')}}
+{{HTML::style('admin/assets/advanced-datatable/media/css/demo_table.css')}}
+
+
 <section id="container" >
       <!--header start-->
       <header class="header white-bg">
@@ -7,13 +12,12 @@
                 <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
             </div>
             <!--logo start-->
-            <a href="" class="logo"><span>LARA</span>V<span>LABS</span></a>
+            <a href="{{URL::to('dashboard')}}" class="logo"><span>LARA</span>V<span>LABS</span></a>
             <!--logo end-->
             
             <div class="top-nav ">
                 <!--search & user info start-->
                 <ul class="nav pull-right top-menu">
-                <li><a href="{{URL::to('../')}}" target="_blank">View Website</a></li>
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <img alt="" src="{{asset('admin/img/avatar1_small.jpg')}}">
@@ -64,77 +68,80 @@
       <section id="main-content">
           <section class="wrapper">
               <!-- page start-->
-              <div class="row">
-                  <div class="col-lg-4">
-                      <!--widget start-->
-                      <aside class="profile-nav alt green-border">
-                          <section class="panel">
-                              <div class="user-heading alt green-bg">
-                                  <a href="#">
-                                      <img alt="" src="{{asset('../assets/home/img/avatar1.jpg')}}">
-                                  </a>
-                                  <h1>Agus Cahyono</h1>
-                                  <p>cahyo.mamen@gmail.com</p>
-                              </div>
-
-                              <ul class="nav nav-pills nav-stacked">
-                                  <li><a href="javascript:;"> <i class="icon-calendar"></i> Blogs <span class="label label-info pull-right r-activity">11</span></a></li>
-                                  <li><a href="javascript:;"> <i class="icon-bell-alt"></i> Pages <span class="label label-warning pull-right r-activity">03</span></a></li>
-                                  <li><a href="javascript:;"> <i class="icon-envelope-alt"></i> Message <span class="label label-success pull-right r-activity">10</span></a></li>
-                              </ul>
-
-                          </section>
-                      </aside>
-                      <!--widget end-->
+              <section class="panel">
+                  <header class="panel-heading">
+                      List Pages
+                  </header>
+                  <div class="panel-body">
+                        <div class="adv-table">
+                            <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
+                                <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Title</th>
+                                    <th class="hidden-phone">View Pages</th>
+                                    <th class="hidden-phone">Status</th>
+                                    <th class="hidden-phone">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($pages as $p)
+                                <tr class="gradeX">
+                                    <td>{{$no++}}</td>
+                                    <td>{{$p->title}}</td>
+                                    <td class="hidden-phone"><a href="">view</a></td>
+                                    <td class="center hidden-phone">{{$p->status}} </td>
+                                    <td class="center hidden-phone">
+                                      {{ link_to_action('PagesController@edit', 'Edit', array($p->id))}} -
+                                      {{ link_to_action('PagesController@delete', 'Delete', array($p->id))}}
+                                    </td>
+                                </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                   </div>
-                  
-                  </div>
-
+              </section>
               <!-- page end-->
           </section>
-
       </section>
       <!--main content end-->
       
   </section>
 
+
     <!-- js placed at the end of the document so the pages load faster -->
-{{HTML::script('admin/js/jquery.js')}}
-{{HTML::script('admin/js/jquery-1.8.3.min.js')}}
+{{HTML::script('admin/assets/advanced-datatable/media/js/jquery.js')}}
 {{HTML::script('admin/js/bootstrap.min.js')}}
 {{HTML::script('admin/js/jquery.dcjqaccordion.2.7.js')}}
 {{HTML::script('admin/js/jquery.scrollTo.min.js')}}
 {{HTML::script('admin/js/jquery.sparkline.js')}}
-{{HTML::script('admin/js/owl.carousel.js')}}
-{{HTML::script('admin/js/jquery.customSelect.min.js')}}
+{{HTML::script('admin/assets/advanced-datatable/media/js/jquery.dataTables.js')}}
 {{HTML::script('admin/js/respond.min.js')}}
 {{HTML::script('admin/js/jquery.dcjqaccordion.2.7.js')}}
 {{HTML::script('admin/js/common-scripts.js')}}
-{{HTML::script('admin/js/sparkline-chart.js')}}
-{{HTML::script('admin/js/easy-pie-chart.js')}}
-{{HTML::script('admin/js/count.js')}}
 
-  <script>
+    <script type="text/javascript">
+      /* Formating function for row details */
+      function fnFormatDetails ( oTable, nTr )
+      {
+          var aData = oTable.fnGetData( nTr );
+          var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
+          sOut += '<tr><td>Rendering engine:</td><td>'+aData[1]+' '+aData[4]+'</td></tr>';
+          sOut += '<tr><td>Link to source:</td><td>Could provide a link here</td></tr>';
+          sOut += '<tr><td>Extra info:</td><td>And any further details here (images etc)</td></tr>';
+          sOut += '</table>';
 
-      //owl carousel
+          return sOut;
+      }
 
       $(document).ready(function() {
-          $("#owl-demo").owlCarousel({
-              navigation : true,
-              slideSpeed : 300,
-              paginationSpeed : 400,
-              singleItem : true,
-			  autoPlay:true
-
+          var oTable = $('#hidden-table-info').dataTable( {
+              "aoColumnDefs": [
+                  { "bSortable": false, "aTargets": [ 0 ] }
+              ],
+              "aaSorting": [[1, 'asc']]
           });
-      });
-
-      //custom select box
-
-      $(function(){
-          $('select.styled').customSelect();
-      });
-
+      } );
   </script>
-
 @stop

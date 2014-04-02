@@ -1,5 +1,18 @@
 @extends('panel/layout')
   @section('content')
+{{HTML::script('tinymce/tinymce.min.js')}}
+<script type="text/javascript">
+tinymce.init({
+    selector: "textarea",
+    plugins: [
+        "advlist autolink lists link image charmap print preview anchor",
+        "searchreplace visualblocks code fullscreen",
+        "insertdatetime media table contextmenu paste"
+    ],
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+});
+</script>
+
 <section id="container" >
       <!--header start-->
       <header class="header white-bg">
@@ -7,13 +20,12 @@
                 <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
             </div>
             <!--logo start-->
-            <a href="" class="logo"><span>LARA</span>V<span>LABS</span></a>
+            <a href="{{URL::to('dashboard')}}" class="logo"><span>LARA</span>V<span>LABS</span></a>
             <!--logo end-->
             
             <div class="top-nav ">
                 <!--search & user info start-->
                 <ul class="nav pull-right top-menu">
-                <li><a href="{{URL::to('../')}}" target="_blank">View Website</a></li>
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <img alt="" src="{{asset('admin/img/avatar1_small.jpg')}}">
@@ -65,30 +77,54 @@
           <section class="wrapper">
               <!-- page start-->
               <div class="row">
-                  <div class="col-lg-4">
-                      <!--widget start-->
-                      <aside class="profile-nav alt green-border">
-                          <section class="panel">
-                              <div class="user-heading alt green-bg">
-                                  <a href="#">
-                                      <img alt="" src="{{asset('../assets/home/img/avatar1.jpg')}}">
-                                  </a>
-                                  <h1>Agus Cahyono</h1>
-                                  <p>cahyo.mamen@gmail.com</p>
+                  <div class="col-lg-12">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Edit Pages
+                          </header>
+                          <div class="panel-body">
+                              <div class=" form">
+                                  {{ Form::open(array('action'=> 'PagesController@update','class'=>"cmxform form-horizontal tasi-form")) }}
+
+                                        {{Form::hidden('id', $pages->id)}}
+
+                                      <div class="form-group ">
+                                          <label for="cname" class="control-label col-lg-2">Title</label>
+                                          <div class="col-lg-10">
+                                              <input class=" form-control"  name="title"  type="text" value="{{$pages->title}}"  />
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group ">
+                                          <label for="cemail" class="control-label col-lg-2">Content</label>
+                                          <div class="col-lg-10">
+                                          	<textarea class="form-control" id="editor1" name="content" required>{{$pages->content}}</textarea>
+                                     	  </div>
+                                      </div>
+
+                                      <div class="form-group ">
+                                          <label for="cname" class="control-label col-lg-2">Status</label>
+                                          <div class="col-lg-10">
+                                          <select class=" form-control"  name="status" required>
+                                          	<option value="1">Publish</option>
+                                          	<option value="0">Draft</option>
+                                          </select>
+                                          </div>
+                                      </div>
+
+                                      <div class="form-group">
+                                          <div class="col-lg-offset-2 col-lg-10">
+                                              <button class="btn btn-danger" type="submit">Save</button>
+                                              <a class="btn btn-default" href="{{URL::to('dashboard/pages')}}">Cancel</a>
+                                          </div>
+                                      </div>
+                                   {{ Form::close() }}
                               </div>
 
-                              <ul class="nav nav-pills nav-stacked">
-                                  <li><a href="javascript:;"> <i class="icon-calendar"></i> Blogs <span class="label label-info pull-right r-activity">11</span></a></li>
-                                  <li><a href="javascript:;"> <i class="icon-bell-alt"></i> Pages <span class="label label-warning pull-right r-activity">03</span></a></li>
-                                  <li><a href="javascript:;"> <i class="icon-envelope-alt"></i> Message <span class="label label-success pull-right r-activity">10</span></a></li>
-                              </ul>
-
-                          </section>
-                      </aside>
-                      <!--widget end-->
+                          </div>
+                      </section>
                   </div>
-                  
-                  </div>
+              </div>
 
               <!-- page end-->
           </section>
@@ -105,36 +141,9 @@
 {{HTML::script('admin/js/jquery.dcjqaccordion.2.7.js')}}
 {{HTML::script('admin/js/jquery.scrollTo.min.js')}}
 {{HTML::script('admin/js/jquery.sparkline.js')}}
-{{HTML::script('admin/js/owl.carousel.js')}}
 {{HTML::script('admin/js/jquery.customSelect.min.js')}}
 {{HTML::script('admin/js/respond.min.js')}}
 {{HTML::script('admin/js/jquery.dcjqaccordion.2.7.js')}}
 {{HTML::script('admin/js/common-scripts.js')}}
-{{HTML::script('admin/js/sparkline-chart.js')}}
-{{HTML::script('admin/js/easy-pie-chart.js')}}
-{{HTML::script('admin/js/count.js')}}
-
-  <script>
-
-      //owl carousel
-
-      $(document).ready(function() {
-          $("#owl-demo").owlCarousel({
-              navigation : true,
-              slideSpeed : 300,
-              paginationSpeed : 400,
-              singleItem : true,
-			  autoPlay:true
-
-          });
-      });
-
-      //custom select box
-
-      $(function(){
-          $('select.styled').customSelect();
-      });
-
-  </script>
 
 @stop
