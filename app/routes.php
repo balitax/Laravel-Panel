@@ -27,11 +27,14 @@ Route::get('dashboard',array('before' => 'auth',function(){
 	$jumlah_blog 		= count($j_blog);
 	$j_pages 			= DB::table('pages')->get();
 	$jumlah_pages		= count($j_pages);
+	$j_porto 			= DB::table('portofolio')->get();
+	$jumlah_porto 		= count($j_porto);
 
 
 	$data['title'] 		= 'Dashboard Administrator';
 	$data['j_blog']		= $jumlah_blog;
 	$data['j_pages']	= $jumlah_pages;
+	$data['j_porto']	= $jumlah_porto;
 
 
 	return View::make('panel/dashboard',$data);

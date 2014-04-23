@@ -24,7 +24,7 @@
                               <ul class="nav nav-pills nav-stacked">
                                   <li><a href="javascript:;"> <i class="icon-calendar"></i> Blogs <span class="label label-info pull-right r-activity">{{$j_blog}}</span></a></li>
                                   <li><a href="javascript:;"> <i class="icon-bell-alt"></i> Pages <span class="label label-warning pull-right r-activity">{{$j_pages}}</span></a></li>
-                                  <li><a href="javascript:;"> <i class="icon-envelope-alt"></i> Message <span class="label label-success pull-right r-activity">10</span></a></li>
+                                  <li><a href="javascript:;"> <i class="icon-bell-alt"></i> Portofolio <span class="label label-success pull-right r-activity">{{$j_porto}}</span></a></li>
                               </ul>
 
                           </section>
