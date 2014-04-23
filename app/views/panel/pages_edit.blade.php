@@ -1,6 +1,6 @@
 @extends('panel/layout')
   @section('content')
-{{HTML::script('tinymce/tinymce.min.js')}}
+<script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
 <script type="text/javascript">
 tinymce.init({
     selector: "textarea",
@@ -14,64 +14,9 @@ tinymce.init({
 </script>
 
 <section id="container" >
-      <!--header start-->
-      <header class="header white-bg">
-            <div class="sidebar-toggle-box">
-                <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
-            </div>
-            <!--logo start-->
-            <a href="{{URL::to('dashboard')}}" class="logo"><span>LARA</span>V<span>LABS</span></a>
-            <!--logo end-->
-            
-            <div class="top-nav ">
-                <!--search & user info start-->
-                <ul class="nav pull-right top-menu">
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img alt="" src="{{asset('admin/img/avatar1_small.jpg')}}">
-                            <span class="username">AGUSC</span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu extended logout">
-                            <div class="log-arrow-up"></div>
-                            <li><a href="{{URL::to('dashboard/profil')}}"><i class=" icon-suitcase"></i>Profile</a></li>
-                            <li><a href="{{URL::to('logout')}}"><i class="icon-key"></i> Log Out</a></li>
-                        </ul>
-                    </li>
-                    <!-- user login dropdown end -->
-                </ul>
-                <!--search & user info end-->
-            </div>
-        </header>
-      <!--header end-->
-      <!--sidebar start-->
-      <aside>
-          <div id="sidebar"  class="nav-collapse ">
-              <!-- sidebar menu start-->
-              <ul class="sidebar-menu" id="nav-accordion">
-                  <li>
-                      <a class="active" href="{{URL::to('dashboard')}}">
-                          <i class="icon-dashboard"></i>
-                          <span>Dashboard</span>
-                      </a>
-                  </li>
+      
+      @include('panel/menu')
 
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="icon-laptop"></i>
-                          <span>Pages</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="{{URL::to('dashboard/pages')}}">All Pages</a></li>
-                          <li><a  href="{{URL::to('dashboard/pages/add')}}">New Pages</a></li>
-                      </ul>
-                  </li>
-
-              </ul>
-              <!-- sidebar menu end-->
-          </div>
-      </aside>
-      <!--sidebar end-->
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">

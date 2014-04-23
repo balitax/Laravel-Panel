@@ -10,7 +10,7 @@ Website: http://thevectorlab.net/
 
 body {
     color: #797979;
-    background: #f1f2f7;
+    background:  rgb(234,239,181);
     font-family: 'Open Sans', sans-serif;
     padding: 0px !important;
     margin: 0px !important;
@@ -43,7 +43,7 @@ a, a:hover, a:focus {
 /*login page*/
 
 .login-body {
-    background-color: #f1f2f7;
+    background-color: #E6E6E6;
 }
 
 .form-signin {
