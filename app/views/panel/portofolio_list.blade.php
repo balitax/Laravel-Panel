@@ -8,10 +8,14 @@
 <section id="container" >
 
 @include('panel/menu')
+
      
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
+@if(Session::has('sukses'))
+       <div class="alert alert-success">{{ Session::get('sukses') }}</div>
+@endif
               <!-- page start-->
               <section class="panel">
                   <header class="panel-heading">
@@ -35,8 +39,8 @@
                                     <td>{{$p->title}}</td>
                                      <td>{{$p->slug}}</td>
                                     <td class="center hidden-phone">
-                                      {{ link_to_action('BlogController@edit', 'Edit', array($b->id))}} -
-                                      {{ link_to_action('BlogController@delete', 'Delete', array($b->id))}}
+                                      {{ link_to_action('BlogController@edit', 'Edit', array($p->id))}} -
+                                      {{ link_to_action('BlogController@delete', 'Delete', array($p->id))}}
                                     </td>
                                 </tr>
                                 @endforeach

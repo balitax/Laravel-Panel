@@ -91,6 +91,11 @@ Route::get('dashboard/portofolio',function(){
 	return View::make('panel/portofolio_list',$data);
 });
 
+Route::get('dashboard/portofolio/add',function(){
+	$data['title'] = 'Add Portofolio - Dashboard Administrator';
+	return View::make('panel/portofolio_add',$data);
+});
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -108,4 +113,6 @@ Route::post('dashboard/blog/update/{id}','BlogController@update');
 
 //Profil
 Route::post('dashboard/profil/save/{id}','ProfilController@update');
+//Portofolio
+Route::post('dashboard/portofolio/save','PortofolioController@create');
 
