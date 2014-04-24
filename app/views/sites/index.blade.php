@@ -1,337 +1,917 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
     <meta charset="utf-8">
+    <title>{{$title}}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Mosaddek">
-    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, assets/home, Template, Theme, Responsive, Fluid, Retina">
-    <link rel="shortcut icon" href="img/favicon.png">
+    <meta name="description" content="{{$description}}">
+    <meta name="keyword" content="{{$keyword}}">
+    <meta name="author" content="Agus Cahyono">
 
-    <title>FlatLab assets/home | Home</title>
+    {{HTML::script('assets/home/js/jquery.min.js')}}
 
-
+    <!-- Styles And Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700,400italic,900|Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
     {{HTML::style('assets/home/css/bootstrap.min.css')}}
-    {{HTML::style('assets/home/css/theme.css')}}
-    {{HTML::style('assets/home/css/bootstrap-reset.css')}}
-
-    {{HTML::style('assets/home/assets/font-awesome/css/font-awesome.css')}}
-    {{HTML::style('assets/home/css/flexslider.css')}}
-    {{HTML::style('assets/home/assets/bxslider/jquery.bxslider.css')}}
-    {{HTML::style('assets/home/assets/revolution_slider/css/rs-style.css')}}
-
-    {{HTML::style('assets/home/assets/revolution_slider/rs-plugin/css/settings.css')}}
-    {{HTML::style('assets/home/css/style.css')}}
-    {{HTML::style('assets/home/css/style-responsive.css')}}
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    {{HTML::style('assets/home/css/main.css')}}
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-  </head>
 
-  <body>
-    <!--header start-->
-    <header class="header-frontend">
-        <div class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html">CAHYO<span>LABS</span></a>
-                </div>
-                <div class="navbar-collapse collapse ">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="">Home</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Service</a></li>
-                        <li><a href="">Portfolio</a></li>
-                        <li><a href="">Price</a></li>
-                        <li><a href="">Blog</a></li>
-                        <li><a href="">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="img/favicon.html">
+
+</head>
+<body class="body-container">
+<!-- Background Slider -->
+<section class="background-slider">
+    
+        <div class="flexslider">
+                
+                <ul class="slides">
+                    <li><img src="{{asset('assets/home/img/demo/bg1.jpg')}}"></li>
+                    <li><img src="{{asset('assets/home/img/demo/bg2.jpg')}}"></li>
+                    <li><img src="{{asset('assets/home/img/demo/bg3.jpg')}}"></li>
+                    <li><img src="{{asset('assets/home/img/demo/bg4.jpg')}}"></li>
+                </ul>
+
         </div>
-    </header>
-    <!--header end-->
+        <!-- end flex slider -->
 
-     <!-- revolution slider start -->
-     <div class="fullwidthbanner-container main-slider">
-         <div class="fullwidthabnner">
-             <ul id="revolutionul" style="display:none;">
-                 <!-- 1st slide -->
-                 <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="">
-                     <div class="caption lfl slide_item_left"
-                          data-x="10"
-                          data-y="70"
-                          data-speed="400"
-                          data-start="1500"
-                          data-easing="easeOutBack">
-                         <img src="{{asset('assets/home/img/banner/ban2.png')}}" alt="Image 1">
-                     </div>
-                     <div class="caption lfr slide_title"
-                          data-x="670"
-                          data-y="120"
-                          data-speed="400"
-                          data-start="1000"
-                          data-easing="easeOutExpo">
-                         Clean & Creative
-                     </div>
+</section>
+<!-- end background slider -->
+<!-- Hidden Menu / Responsive Second Menu -->
+<section class="top-menu hidden-section fullwidth-section">
 
-                     <div class="caption lfr slide_subtitle dark-text"
-                          data-x="670"
-                          data-y="190"
-                          data-speed="400"
-                          data-start="2000"
-                          data-easing="easeOutExpo">
-                         A Responsive assets/home Template
-                     </div>
-                     <div class="caption lfr slide_desc"
-                          data-x="670"
-                          data-y="260"
-                          data-speed="400"
-                          data-start="2500"
-                          data-easing="easeOutExpo">
-                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem <br>
-                         accusantium doloremque laudantium, totam rem aperiam,<br>
-                         eaque ipsa quae ablic jiener.
-                     </div>
-                     <a class="caption lfr btn yellow slide_btn" href="http://thevectorlab.net/flatlab" target="_blank"
-                        data-x="670"
-                        data-y="400"
-                        data-speed="400"
-                        data-start="3500"
-                        data-easing="easeOutExpo">
-                         Watch Dashboard
-                     </a>
+    <a href="#hidden-menu" class="open-menu">Menu</a>
+    
+    <nav class="menu" id="hidden-menu">
+        <ul>
+            <li><a href="#">Home</a>
+                    <ul>
+                        <li><a href="#">Drop Down Menu</a></li>
+                        <li><a href="#">Drop Down Menu</a></li>
+                        <li><a href="#">Drop Down Menu</a></li>
+                    </ul>
+            </li>
+            <li><a href="page.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="archives.html">Archives</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-                 </li>
+</section>
+<!-- end top menu -->
 
-                 <!-- 2nd slide  -->
-                 <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="">
-                     <!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
-                     <img src="{{asset('assets/home/img/banner/banner_bg.jpg')}}" alt="">
-                     <div class="caption lft slide_title"
-                          data-x="10"
-                          data-y="125"
-                          data-speed="400"
-                          data-start="1500"
-                          data-easing="easeOutExpo">
-                         YAHOOOOO. TWO IN ONE
-                     </div>
-                     <div class="caption lft slide_subtitle dark-text"
-                          data-x="10"
-                          data-y="180"
-                          data-speed="400"
-                          data-start="2000"
-                          data-easing="easeOutExpo">
-                         assets/home & Fronend in a single bundle
-                     </div>
-                     <div class="caption lft slide_desc dark-text"
-                          data-x="10"
-                          data-y="240"
-                          data-speed="400"
-                          data-start="2500"
-                          data-easing="easeOutExpo">
-                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem <br>
-                         accusantium doloremque laudantium, totam rem aperiam,<br>
-                         eaque ipsa quae ablic jiener.
-                     </div>
-                     <a class="caption lft slide_btn btn red slide_item_left" href="#" target="_blank"
-                        data-x="10"
-                        data-y="360"
-                        data-speed="400"
-                        data-start="3000"
-                        data-easing="easeOutExpo">
-                         Purchase Now
-                     </a>
-                     <div class="caption lft start"
-                          data-x="640"
-                          data-y="55"
-                          data-speed="400"
-                          data-start="2000"
-                          data-easing="easeOutBack"  >
-                         <img src="{{asset('assets/home/img/banner/man.png')}}" alt="man">
-                     </div>
-                     <div class="caption lft slide_item_right"
-                          data-x="330"
-                          data-y="20"
-                          data-speed="500"
-                          data-start="5000"
-                          data-easing="easeOutBack">
-                         <img src="{{asset('assets/home/img/banner/test_man.png')}}" id="rev-hint2" alt="txt img">
-                     </div>
-
-                 </li>
-
-                 <!-- 3rd slide  -->
-                 <li data-transition="fade" data-slotamount="7" data-masterspeed="300" data-delay="9400" data-thumb="">
-                     <img src="{{asset('assets/home/img/banner/red-bg.jpg')}}" alt="">
-                     <div class="caption lfl slide_item_right"
-                          data-x="10"
-                          data-y="105"
-                          data-speed="1200"
-                          data-start="1500"
-                          data-easing="easeOutBack">
-                         <img src="{{asset('assets/home/img/banner/imac.png')}}" alt="Image 1">
-                     </div>
-                     <div class="caption lfl slide_item_right"
-                          data-x="25"
-                          data-y="345"
-                          data-speed="1200"
-                          data-start="2000"
-                          data-easing="easeOutBack">
-                         <img src="{{asset('assets/home/img/banner/tab.png')}}" alt="Image 1">
-                     </div>
-                     <div class="caption lfl slide_item_right"
-                          data-x="200"
-                          data-y="330"
-                          data-speed="1200"
-                          data-start="2500"
-                          data-easing="easeOutBack">
-                         <img src="{{asset('assets/home/img/banner/mobile.png')}}" alt="Image 1">
-                     </div>
-                     <div class="caption lfl slide_item_right"
-                          data-x="250"
-                          data-y="230"
-                          data-speed="1200"
-                          data-start="3000"
-                          data-easing="easeOutBack">
-                         <img src="{{asset('assets/home/img/banner/laptop.png')}}" alt="Image 1">
-                     </div>
-                     <div class="caption lfl slide_item_right"
-                          data-x="165"
-                          data-y="30"
-                          data-speed="500"
-                          data-start="5000"
-                          data-easing="easeOutBack">
-                         <img src="{{asset('assets/home/img/banner/text_imac.png')}}" id="rev-hint1" alt="Image 1">
-                     </div>
-
-                     <div class="caption lfr slide_title slide_item_left yellow-txt"
-                          data-x="670"
-                          data-y="145"
-                          data-speed="400"
-                          data-start="3500"
-                          data-easing="easeOutExpo">
-                         Full Responsive
-                     </div>
-                     <div class="caption lfr slide_subtitle slide_item_left"
-                          data-x="670"
-                          data-y="200"
-                          data-speed="400"
-                          data-start="4000"
-                          data-easing="easeOutExpo">
-                         And Awesome Flat Design
-                     </div>
-                     <div class="caption lfr slide_desc slide_item_left"
-                          data-x="670"
-                          data-y="280"
-                          data-speed="400"
-                          data-start="4500"
-                          data-easing="easeOutExpo">
-                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem <br>
-                         accusantium doloremque laudantium, totam rem aperiam,<br>
-                         eaque ipsa quae ablic jiener.
-                     </div>
-
-
-                 </li>
-
-             </ul>
-            <div class="tp-bannertimer tp-top"></div>
-         </div>
-     </div>
-     <!-- revolution slider end -->
-
-     <div class="container">
-         <!--clients start-->
-         <div class="clients">
-             <div class="container">
-                 <div class="row">
-                     <div class="col-lg-12 text-center">
-                         <ul class="list-unstyled">
-                             <li><a href="#"><img src="{{asset('assets/home/img/clients/logo1.png')}}" alt=""></a></li>
-                             <li><a href="#"><img src="{{asset('assets/home/img/clients/logo2.png')}}" alt=""></a></li>
-                             <li><a href="#"><img src="{{asset('assets/home/img/clients/logo3.png')}}" alt=""></a></li>
-                             <li><a href="#"><img src="{{asset('assets/home/img/clients/logo4.png')}}" alt=""></a></li>
-                             <li><a href="#"><img src="{{asset('assets/home/img/clients/logo5.png')}}" alt=""></a></li>
-                         </ul>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <!--clients end-->
-     </div>
-
-     <!--container end-->
-
-    <!--footer start-->
-    <footer class="footer">
+<!-- main content -->
+<section class="main-content">
+    
+        <!-- container -->
         <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-sm-3">
-                    <h1>contact info</h1>
-                    <address>
-                        <p>Address: Jl. Joyosuko G 3 No 7</p>
-                        <p>Merjosari Malang, Indonesia</p>
+                
+                <div class="row">
+                    
+                            
+                            <!-- sidebar -->
+                            <div class="col-mx-12 col-md-4 sidebar" id="sidebar">
 
-                        <p>Phone : (+62) 82301290429</p>
-                        <p>Email : <a href="javascript:;">cahyo.mamen@gmail.com</a></p>
-                    </address>
+
+                                <div class="sidebar-content-wrapper">
+
+                                
+                                <!-- logo wrapper -->
+                                <div class="logo-wrapper">
+                                        
+                                        <a href="index-2.html" class="logo">
+                                            <img src="{{asset('assets/home/img/demo/logo.png')}}" />
+                                        </a>
+
+                                        <!-- site description -->
+                                        <div class="site-description"><p>Not Just Another Wordpress Theme</p></div>
+
+                                        <!-- site meta -->
+                                        <div class="site-meta">
+                                                
+                                                <a href="#" data-title="Home" class="home"></a>
+                                                <a href="#" data-title="Search" class="search"></a>
+                                                <a href="#" data-title="Reader" class="reader toggleSidebar"></a>
+                                                
+                                                <!-- hidden search form -->
+                                                <form action="#" class="search hidden-search-form">
+                                                    
+                                                    <input type="text" class="s" placeholder="Type and hit enter...">
+
+                                                </form>
+                                        </div>
+                                        <!-- end site meta -->
+
+                                </div>
+                                <!-- end logo wrapper -->
+
+
+
+                                <!-- main menu -->
+                                <nav class="second-menu">
+                                    
+                                    <ul>
+                                        <li><a href="#">Home</a>
+                                                <ul>
+                                                    <li><a href="#">Drop Down Menu</a></li>
+                                                    <li><a href="#">Drop Down Menu</a></li>
+                                                    <li><a href="#">Drop Down Menu</a></li>
+                                                </ul>
+                                        </li>
+                                        <li><a href="page.html">About</a></li>
+                                        <li><a href="gallery.html">Gallery</a></li>
+                                        <li><a href="archives.html">Archives</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+
+                                </nav>
+                                <!-- end second menu -->
+
+
+
+                                <!-- widgets -->
+                                <div class="widgets-wrapper">
+                                    
+                                        
+                                        <!-- search widget -->
+                                        <div class="widget">
+                                                
+                                                 <div class="widget-content">
+
+                                                     <form action="#" class="search">
+                                                        
+                                                        <input type="text" class="s" placeholder="Type and hit enter...">
+
+                                                    </form>
+
+                                                </div><!-- end widget content -->
+                                                
+
+                                        </div>
+                                        <!-- end widget -->
+
+
+                                        <!-- categories -->
+                                        <div class="widget">
+
+                                                <h3>Categories</h3>
+                                            
+                                                <!-- widget content -->
+                                                <div class="widget-content">
+                                                    
+                                                   <div class="cats-widget">
+                                                            
+                                                             <ul>
+                                                                <li><a href="#">Technology</a><span>37</span></li>
+                                                                <li><a href="#">Photography</a><span>49</span></li>
+                                                                <li><a href="#">Miscellaneous</a><span>16</span></li>
+                                                                <li><a href="#">Off Topics</a><span>16</span></li>
+                                                                <li><a href="#">Music And Videos</a><span>149</span></li>
+                                                            </ul>
+
+                                                   </div>
+                                                   <!-- end -->
+
+                                                </div>
+                                                <!-- end widget content -->
+
+
+                                        </div>
+                                        <!-- end widget -->
+
+
+
+                                        <!-- flickr widget -->
+                                        <div class="widget">
+                                            
+                                                <h3>Flickr</h3>
+
+                                                <div class="widget-content">
+                                                            
+                                                        <div class="flickr-wrapper">
+                                                            
+
+                                                                 <div class="flexslider"><!-- jflickrfeed wrapper -->
+                                                                <ul class="slides"></ul></div>
+
+
+                                                        </div>
+                                                        <!-- end flickr wrapper -->
+
+                                                </div>
+                                                <!-- end widget content -->
+
+
+                                        </div>
+                                        <!-- end widget -->
+
+
+                                        <!-- twitter widget -->
+                                        <div class="widget">
+                                            
+
+                                            <h3>Twitter</h3>
+
+                                            <div class="widget-content">
+                                                
+                                                        <div class="tweet">
+                                                            <p>
+                                                                <a href="#">@SuitsTheme</a> Our featured 
+                                                                WordPress Theme 'Verona' is 
+                                                                up-to-date with great new features. 
+                                                                Check it out! <a href="#">http://t.co/PIMqhlU</a>
+                                                            </p>
+
+                                                        </div>
+                                                        <!-- end tweet -->
+
+
+                                                        <div class="tweet">
+                                                            <p>
+                                                                We are the owner of 'shiny silver 
+                                                                paw' on ThemeForest now! Thanks 
+                                                                everyone!
+                                                            </p>
+
+                                                        </div>
+                                                        <!-- end tweet -->
+
+
+                                                        <a href="#" class="follow-us"><span class="bg"></span>Follow Us!</a>
+
+
+                                            </div>
+                                            <!-- end twitter -->
+
+                                        </div>
+                                        <!-- end widget -->
+                                        
+
+                                        <!-- popular posts -->
+                                        <div class="widget">
+                                            
+
+                                                <h3>Popular Posts</h3>
+
+                                                <div class="widget-content">
+                                                    
+
+                                                        <div class="popular-post">
+                                                            
+
+                                                                <a href="single.html" class="title">Life Isn’t Just a Sequence of Waiting For Things To Be Done!</a>
+                                                                <span class="date">October 12, 2013</span>
+
+
+                                                        </div>
+                                                        <!-- end post -->
+
+
+                                                        <div class="popular-post">
+                                                            
+
+                                                                <a href="single.html" class="title">I Don’t Have a Bucket List, I Have a To Do List</a>
+                                                                <span class="date">September 12, 2013</span>
+
+
+                                                        </div>
+                                                        <!-- end post -->
+
+
+                                                        <div class="popular-post">
+                                                            
+
+                                                                <a href="single.html" class="title">Self-Hosted Audio Player With an Awesome Featured Image</a>
+                                                                <span class="date">September 8, 2013</span>
+
+
+                                                        </div>
+                                                        <!-- end post -->
+
+
+                                                </div>
+                                                <!-- end widget content -->
+
+
+                                        </div>
+                                        <!-- end widget -->
+
+                                        <!-- dribble -->
+                                        <div class="widget">
+                                            
+
+                                                <h3>Dribbble</h3>
+
+                                                <div class="widget-content">
+                                                    
+                                                        <div class="dribbble-wrapper">
+                                                            <a href="#" class="shot"></a>
+                                                            <a href="#" class="shot"></a>
+                                                            <a href="#" class="shot"></a>
+                                                            <a href="#" class="shot"></a>
+                                                        </div>
+                                                        <!-- end dribbble wrapper -->
+
+
+                                                </div>
+                                                <!-- end widget content -->
+
+
+                                        </div>
+                                        <!-- end widget -->
+
+
+                                        <!-- recent comments -->
+                                        <div class="widget">
+                                                
+                                                    
+                                                    <h3>Recent Comments</h3>
+
+                                                    <div class="widget-content">
+                                                        
+                                                            <div class="recent-comments-wrapper">
+                                                                    
+
+                                                                    <div class="recent-comment">
+                                                                            
+                                                                            <a href="#" class="avatar">
+                                                                                <img src="{{asset('assets/home/img/demo/author-2.png')}}" alt="">
+
+                                                                                </a>
+
+                                                                            <a href="single.html#comments" class="content"><span class="author">Nicole Kidman</span><p>Mauris vitae velit sit amet 
+                                                                            nequerla dignissim commodo.</p></a>
+
+                                                                    </div>
+                                                                    <!-- end recent comment -->
+
+
+                                                                     <div class="recent-comment">
+                                                                            
+                                                                            <a href="#" class="avatar"><img src="{{asset('assets/home/img/demo/author-1.png')}}" alt=""></a>
+
+                                                                            <a href="single.html#comments" class="content"><span class="author">Brad Pitt</span><p>Mauris vitae velit sit amet 
+                                                                            nequerla dignissim commodo.</p></a>
+
+                                                                    </div>
+                                                                    <!-- end recent comment -->
+
+
+                                                                     <div class="recent-comment">
+                                                                            
+                                                                            <a href="#" class="avatar"><img src="{{asset('assets/home/img/demo/author-3.png')}}" alt=""></a>
+
+                                                                            <a href="single.html#comments" class="content"><span class="author">Angelina Jolie</span><p>Mauris vitae velit sit amet 
+                                                                            nequerla dignissim commodo.</p></a>
+
+                                                                    </div>
+                                                                    <!-- end recent comment -->
+
+
+
+                                                            </div>
+                                                            <!-- end recent comments -wrapper -->
+
+
+                                                    </div>
+                                                    <!-- end widget content -->
+                                            
+
+                                        </div>
+                                        <!-- end recent comments widget -->
+
+
+
+
+
+                                        <!-- tags widget -->
+                                        <div class="widget">
+                                            
+                                                    
+                                                    <h3>Tagcloud</h3>
+
+                                                    <div class="widget-content">
+                                                        
+                                                        <div class="tagcloud">
+                                                                
+                                                                    <a href="#">blog</a>
+                                                                    <a href="#">suits theme</a>
+                                                                    <a href="#">wordpress</a>
+                                                                    <a href="#">technology</a>
+                                                                    <a href="#">design</a>
+                                                                    <a href="#">unique</a>
+                                                                    <a href="#">dark</a>    
+                                                        
+                                                        </div>
+                                                        <!-- end tagcloud -->
+
+
+                                                    </div>
+                                                    <!-- end widget content -->
+
+
+
+                                        </div>
+                                        <!-- end tags -->
+
+
+
+
+                                        <!-- text widget -->
+                                        <div class="widget">
+                                            
+
+                                                    <h3>Text Widget</h3>
+
+                                                    <div class="widget-content">
+                                                            
+                                                                    <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. 
+                                                                    <br><br>
+                                                                    Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque suspendisse in orci denim odio ferment.</p>
+    
+
+                                                    </div>
+                                                    <!-- end widget content -->
+                                            
+                                        </div>
+                                        <!-- end widget -->
+
+
+                                        <!-- social widget -->
+                                        <div class="widget">
+                                            
+                                                    
+                                                    <h3>Social</h3>
+
+                                                    <div class="widget-content">
+                                                        
+                                                            
+                                                            <div class="social-wrapper">
+                                                                
+                                                                    <a href="#" class="facebook"></a>
+                                                                    <a href="#" class="twitter"></a>
+                                                                    <a href="#" class="dribbble"></a>
+                                                                    <a href="#" class="flickr"></a>
+                                                                    <a href="#" class="youtube"></a>
+                                                                    <a href="#" class="rss"></a>
+
+                                                            </div>
+                                                            <!-- end scoial wrapper -->
+                                                            
+
+                                                    </div>
+                                                    <!-- end widget content -->
+
+
+
+                                        </div>
+                                        <!-- end social -->
+
+
+
+                                </div>
+                                <!-- end widgets wrapper -->
+
+
+
+                                <!-- copyrights -->
+                                <div class="copyrights">
+                                    
+
+                                        <p>@2013 Journal Wordpress Theme</p>
+
+                                </div>
+                                <!-- end copyrights -->
+
+
+
+
+                            </div><!-- end sidebar content wrapper -->
+
+                            </div>
+                            <!-- end sidebar -->
+
+
+
+                            <!-- page content wrapper -->
+                            <div class="col-mx-12 col-md-8 page-wrapper" id="page-wrapper">
+                                
+                                        
+                                        <!-- page -->
+                                        <div class="page">
+                                                    
+
+                                            <!-- single post -->
+                                            <div class="single-post">
+                                                
+                                                    
+                                                    <!-- post image -->
+                                                    <div class="post-image image">
+                                                            
+                                                        <a href="single.html"><img src="{{asset('assets/home/img/demo/post1.png')}}" alt="Post"></a>                                        
+                                                    </div>
+                                                    <!-- end post image -->
+
+
+
+                                                    <!-- post content -->
+                                                    <div class="post-content">
+                                                                
+                                                                <!-- title -->
+                                                                <h2 class="post-title"><a href="single.html">Grand Designs for Small Workspaces: 
+                                                                The freelancer’s dream office</a></h2>
+
+
+                                                                <!-- post meta -->
+                                                                <div class="post-meta">
+                                                                    
+                                                                        <div class="date"><i></i><span>October 12 , 2013</span></div>
+                                                                        <div class="comments"><i></i><span>7 Comments</span></div>
+                                                                        <div class="like"><i></i><span>25 Likes</span></div>
+
+
+                                                                </div>
+                                                                <!-- end post meta -->
+
+
+                                                                <!-- post inner content -->
+                                                                <div class="post-inner-content">
+                                                                    
+
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex commodo consequat. Duis aute dolor reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+
+                                                                </div>
+                                                                <!-- end post inner content -->
+
+
+                                                                <!-- read more button -->
+                                                                <a href="single.html" class="readmore">Read More</a>
+        
+
+                                                    </div>
+                                                    <!-- end post content -->
+
+
+                                            </div>
+                                            <!-- end single post -->
+
+
+
+
+
+                                            <!-- single post -->
+                                            <div class="single-post">
+                                                
+                                                    
+                                                   
+
+
+
+                                                    <!-- post content -->
+                                                    <div class="post-content">
+                                                                
+                                                                <!-- title -->
+                                                                <h2 class="post-title"><a href="single.html">How to Optimize Your Website for Users</a></h2>
+
+
+                                                                <!-- post meta -->
+                                                                <div class="post-meta">
+                                                                    
+                                                                        <div class="date"><i></i><span>October 12 , 2013</span></div>
+                                                                        <div class="comments"><i></i><span>7 Comments</span></div>
+                                                                        <div class="like"><i></i><span>25 Likes</span></div>
+
+
+                                                                </div>
+                                                                <!-- end post meta -->
+
+
+                                                                <!-- post inner content -->
+                                                                <div class="post-inner-content">
+                                                                    
+
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex commodo consequat. Duis aute dolor reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+
+                                                                    <p class="light-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
+
+                                                                </div>
+                                                                <!-- end post inner content -->
+
+
+                                                                <!-- read more button -->
+                                                                <a href="single.html" class="readmore">Read More</a>
+        
+
+                                                    </div>
+                                                    <!-- end post content -->
+
+
+                                            </div>
+                                            <!-- end single post -->
+
+
+
+                                            <!-- single post -->
+                                            <div class="single-post">
+                                                
+                                                    
+                                                    <!-- post image -->
+                                                    <div class="post-image gallery flexslider">
+                                                            
+                                                        <ul class="slides">
+                                                            <li><img src="{{asset('assets/home/img/demo/post2.png')}}" alt="Slider Image 1"></li>
+                                                            <li><img src="{{asset('assets/home/img/demo/post5.png')}}" alt="Slider Image 2"></li>
+                                                            <li><img src="{{asset('assets/home/img/demo/post1.png')}}" alt="Slider Image 3"></li>
+                                                            <li><img src="{{asset('assets/home/img/demo/post4.png')}}" alt="Slider Image 4"></li>
+                                                        </ul>                                        
+                                                    </div>
+                                                    <!-- end post image -->
+
+
+
+                                                    <!-- post content -->
+                                                    <div class="post-content">
+                                                                
+                                                                <!-- title -->
+                                                                <h2 class="post-title"><a href="single.html">Cool Gifts for Web Designers & Geeks</a></h2>
+
+
+                                                                <!-- post meta -->
+                                                                <div class="post-meta">
+                                                                    
+                                                                        <div class="date"><i></i><span>October 12 , 2013</span></div>
+                                                                        <div class="comments"><i></i><span>7 Comments</span></div>
+                                                                        <div class="like"><i></i><span>25 Likes</span></div>
+
+
+                                                                </div>
+                                                                <!-- end post meta -->
+
+
+                                                                <!-- post inner content -->
+                                                                <div class="post-inner-content">
+                                                                    
+
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex commodo consequat. Duis aute dolor reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+
+                                                                </div>
+                                                                <!-- end post inner content -->
+
+
+                                                                <!-- read more button -->
+                                                                <a href="single.html" class="readmore">Read More</a>
+        
+
+                                                    </div>
+                                                    <!-- end post content -->
+
+
+                                            </div>
+                                            <!-- end single post -->
+
+
+
+
+                                            <!-- single post -->
+                                            <div class="single-post">
+                                                
+                                                    
+                                                    <!-- post image -->
+                                                    <div class="post-image quote">
+                                                        
+                                                        <div class="quote-wrapper">
+                                                                
+                                                                <a href="single.html" class="quotelink">
+                                                                    <p>Design is not just what it looks like and feels like. Design is how it works.</p>
+
+                                                                    <span class="author">Steve Jobs</span></a>
+
+
+                                                        </div>
+                                                        <!-- end quote wrapper -->    
+                                                                                         
+                                                    </div>
+                                                    <!-- end post image -->
+
+
+
+
+
+                                            </div>
+                                            <!-- end single post -->
+
+
+
+
+                                            <!-- single post -->
+                                            <div class="single-post">
+                                                
+                                                    
+                                                    <!-- post image -->
+                                                    <div class="post-image audio">
+
+                                                        <div class="bg_image"><img src="{{asset('assets/home/img/demo/post3.png')}}" alt="Audio Player Background"></div>
+                                                            
+                                                        <audio controls>
+                                                          <source src="http://files.suitstheme.com/music/audio.ogg" type="audio/ogg">
+                                                          <source src="http://files.suitstheme.com/music/audio.mp3" type="audio/mpeg">
+                                                            <p>Your browser does not support the audio element.</p>
+                                                        </audio>                                     
+                                                    </div>
+                                                    <!-- end post image -->
+
+
+
+                                                    <!-- post content -->
+                                                    <div class="post-content">
+                                                                
+                                                                <!-- title -->
+                                                                <h2 class="post-title"><a href="single.html">Self-Hosted Audio Player With an Awesome Featured Image</a></h2>
+
+
+                                                                <!-- post meta -->
+                                                                <div class="post-meta">
+                                                                    
+                                                                        <div class="date"><i></i><span>October 12 , 2013</span></div>
+                                                                        <div class="comments"><i></i><span>7 Comments</span></div>
+                                                                        <div class="like"><i></i><span>25 Likes</span></div>
+
+
+                                                                </div>
+                                                                <!-- end post meta -->
+
+
+                                                                <!-- post inner content -->
+                                                                <div class="post-inner-content">
+                                                                    
+
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex commodo consequat. Duis aute dolor reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+
+                                                                </div>
+                                                                <!-- end post inner content -->
+
+
+                                                                <!-- read more button -->
+                                                                <a href="single.html" class="readmore">Read More</a>
+        
+
+                                                    </div>
+                                                    <!-- end post content -->
+
+
+                                            </div>
+                                            <!-- end single post -->
+
+
+
+                                            <!-- single post -->
+                                            <div class="single-post">
+                                                
+                                                    
+                                                    <!-- post image -->
+                                                    <div class="post-image link">
+                                                        
+                                                        <div class="link-wrapper">
+                                                                
+                                                                <a href="single.html" class="link">
+                                                                    <p>Awesome Wordpress Theme</p>
+
+                                                                    <span class="description">Some of our WordPress Themes over on ThemeForest. Go check out 
+                                                                    some more awesomeness.</span></a>
+
+
+                                                        </div>
+                                                        <!-- end link wrapper -->    
+                                                                                         
+                                                    </div>
+                                                    <!-- end post image -->
+
+
+
+
+
+                                            </div>
+                                            <!-- end single post -->
+
+
+
+
+                                            <!-- single post -->
+                                            <div class="single-post">
+                                                
+                                                    
+                                                    <!-- post image -->
+                                                    <div class="post-image video">
+
+                                                      
+                                                            
+                                                        <video height="100%" poster="{{asset('assets/home/img/demo/post4.png')}}" controls="controls" preload="none">
+                                                            <!-- MP4 for Safari, IE9, iPhone, iPad, Android, and Windows Phone 7 -->
+                                                            <source type="video/mp4" src="http://waleedomar.com/demo/j/src/video.mp4" />
+                                                            <!-- WebM/VP8 for Firefox4, Opera, and Chrome -->
+                                                            <source type="video/webm" src="http://waleedomar.com/demo/j/src/video.webm" />
+                                                            
+                                                            <!-- Flash fallback for non-HTML5 browsers without JavaScript -->
+                                                            <object type="application/x-shockwave-flash" data="http://waleedomar.com/demo/j/src/flashmediaelement.swf">
+                                                                <param name="movie" value="http://waleedomar.com/demo/j/src/flashmediaelement.swf" />
+                                                                <param name="flashvars" value="controls=true&file=myvideo.mp4" />
+                                                                <!-- Image as a last resort -->
+                                                                <img src="{{asset('assets/home/img/demo/post4.png')}}" title="No video playback capabilities" />
+                                                        </object>
+                                                        </video>                          
+                                                    </div>
+                                                    <!-- end post image -->
+
+
+
+                                                    <!-- post content -->
+                                                    <div class="post-content">
+                                                                
+                                                                <!-- title -->
+                                                                <h2 class="post-title"><a href="single.html">Self-Hosted Video Player With an Awesome Featured Image</a></h2>
+
+
+                                                                <!-- post meta -->
+                                                                <div class="post-meta">
+                                                                    
+                                                                        <div class="date"><i></i><span>October 12 , 2013</span></div>
+                                                                        <div class="comments"><i></i><span>7 Comments</span></div>
+                                                                        <div class="like"><i></i><span>25 Likes</span></div>
+
+
+                                                                </div>
+                                                                <!-- end post meta -->
+
+
+                                                                <!-- post inner content -->
+                                                                <div class="post-inner-content">
+                                                                    
+
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex commodo consequat. Duis aute dolor reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+
+                                                                </div>
+                                                                <!-- end post inner content -->
+
+
+                                                                <!-- read more button -->
+                                                                <a href="single.html" class="readmore">Read More</a>
+        
+
+                                                    </div>
+                                                    <!-- end post content -->
+
+
+                                            </div>
+                                            <!-- end single post -->
+
+
+
+
+                                        </div>
+                                        <!-- end page -->
+
+
+                                        
+                                        <!-- load more button -->
+                                        <div id="load-more">
+                                        <a href="#" class="load-more">Page 2</a>
+                                        <a href="#" class="load-more">Index Page</a>
+                                        </div>
+                                        <!-- end load more -->
+                                            
+
+
+                            </div>
+                            <!-- end posts wrapper -->
+            
+
                 </div>
-                <div class="col-lg-5 col-sm-5">
-                    <h1>latest tweet</h1>
-                    <div class="tweet-box">
-                        <i class="icon-twitter"></i>
-                        <em>Please follow <a href="javascript:;">@gauscahyono</a> for all future updates of us! <a href="javascript:;">twitter.com/gauscahyono</a></em>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-3 col-lg-offset-1">
-                    <h1>stay connected</h1>
-                    <ul class="social-link-footer list-unstyled">
-                        <li><a href="#"><i class="icon-facebook"></i></a></li>
-                        <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                        <li><a href="#"><i class="icon-twitter"></i></a></li>
-                        <li><a href="#"><i class="icon-github"></i></a></li>
-                    </ul>
-                </div>
-            </div>
+                <!-- end row -->
+
         </div>
-    </footer>
-    <!--footer end-->
-    {{HTML::script('assets/home/js/jquery.js')}}
-    {{HTML::script('assets/home/js/jquery-1.8.3.min.js')}}
-    {{HTML::script('assets/home/js/bootstrap.min.js')}}
-    {{HTML::script('assets/home/js/jquery.easing.min.js')}}
-    {{HTML::script('assets/home/js/link-hover.js')}}
-    {{HTML::script('assets/home/assets/revolution_slider/rs-plugin/js/jquery.themepunch.plugins.min.js')}}
-    {{HTML::script('assets/home/assets/revolution_slider/rs-plugin/js/jquery.themepunch.revolution.min.js')}}
-    {{HTML::script('assets/home/js/common-scripts.js')}}
-    {{HTML::script('assets/home/js/revulation-slide.js')}}
+        <!-- end container -->
 
-  <script>
+</section>
+<!-- end main content -->
+<!-- Scripts -->
+{{HTML::script('assets/home/js/jquery.flexslider-min.js')}}
+{{HTML::script('assets/home/js/jquery-ui-1.10.3.custom.min.js')}}
+{{HTML::script('assets/home/js/mediaelement.min.js')}}
+{{HTML::script('assets/home/js/jflickrfeed.js')}}
+{{HTML::script('assets/home/js/placeholder.js')}}
+{{HTML::script('assets/home/js/jquery.browser.js')}}
+{{HTML::script('assets/home/js/retina.min.js')}}
+{{HTML::script('assets/home/js/custom.js')}}
 
-      RevSlide.initRevolutionSlider();
-
-      $(window).load(function() {
-          $('[data-zlname = reverse-effect]').mateHover({
-              position: 'y-reverse',
-              overlayStyle: 'rolling',
-              overlayBg: '#fff',
-              overlayOpacity: 0.7,
-              overlayEasing: 'easeOutCirc',
-              rollingPosition: 'top',
-              popupEasing: 'easeOutBack',
-              popup2Easing: 'easeOutBack'
-          });
-      });
-
-  </script>
-
-  </body>
+</body>
 </html>

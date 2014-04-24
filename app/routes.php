@@ -13,7 +13,12 @@
 
 Route::get('/', function()
 {
-	return View::make('sites/index');
+	$data = array(
+		'title'			=> '.: Blog Pribadi Agus Cahyono :. ',
+		'description'	=> 'Blog Agus Cahyono',
+		'keyword'		=> 'agus cahyono, agus, cahyono,laravel,code igniter',
+	);
+	return View::make('sites/index',$data);
 });
 
 // GET ROUTE //
